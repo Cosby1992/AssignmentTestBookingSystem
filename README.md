@@ -46,7 +46,7 @@ and the tables are filled with data.
 <br>
 
 The option to create customers, employees and bookings has been implemented in the same 
-style and architecture as in preexisting code and the system-skeleton in [section 1](#-1-BOOKING-SYSTEM).
+style and architecture as in preexisting code and the system-skeleton in [section 1](#1-booking-system).
 The files implemented can be found in these three folders: <br>
 ```src/main/java/dto``` <br>
 ```src/main/java/datalayer``` <br>
