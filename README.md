@@ -1,4 +1,6 @@
 # Test Assignment - Booking System
+### Hand in by
+Anders Jacobsen, Dmitro Karaush
 
 ## 1 BOOKING SYSTEM
 You are going to work on a skeleton of a simple booking system. The idea is for
