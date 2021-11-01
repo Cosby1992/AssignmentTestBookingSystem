@@ -2,17 +2,17 @@ package dto;
 
 import java.sql.Date;
 
-public class Customer {
+public class Employee {
+
     private final int id;
-    private final String firstname, lastname, phone;
+    private final String firstname, lastname;
     private final Date birthdate;
 
-    public Customer(int id, String firstname, String lastname, Date birthdate, String phone) {
+    public Employee(int id, String firstname, String lastname, Date birthdate) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
-        this.phone = phone;
     }
 
     public int getId() {
@@ -29,9 +29,5 @@ public class Customer {
 
     public Date getBirthdate() {
         return birthdate;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 }

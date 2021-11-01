@@ -23,7 +23,7 @@ public class CustomerStorageImpl implements CustomerStorage {
 
     @Override
     public Customer getCustomerWithId(int customerId) throws SQLException {
-        var sql = "select ID, firstname, lastname, birthdate from Customers where id = ?";
+        var sql = "select * from Customers where id = ?";
         try (var con = getConnection();
              var stmt = con.prepareStatement(sql)) {
             stmt.setInt(1, customerId);
@@ -33,7 +33,9 @@ public class CustomerStorageImpl implements CustomerStorage {
                     var id = resultSet.getInt("ID");
                     var firstname = resultSet.getString("firstname");
                     var lastname = resultSet.getString("lastname");
-                    return new Customer(id, firstname, lastname);
+                    var birthdate = resultSet.getDate("birthdate");
+                    var phone = resultSet.getString("phone");
+                    return new Customer(id, firstname, lastname, birthdate, phone);
                 }
                 return null;
             }
@@ -45,14 +47,16 @@ public class CustomerStorageImpl implements CustomerStorage {
              var stmt = con.createStatement()) {
             var results = new ArrayList<Customer>();
 
-            try (ResultSet resultSet = stmt.executeQuery("select ID, firstname, lastname from Customers")) {
+            try (ResultSet resultSet = stmt.executeQuery("select * from Customers")) {
 
                 while (resultSet.next()) {
                     int id = resultSet.getInt("ID");
                     String firstname = resultSet.getString("firstname");
                     String lastname = resultSet.getString("lastname");
+                    Date birthdate = resultSet.getDate("birthdate");
+                    String phone = resultSet.getString("phone");
 
-                    Customer c = new Customer(id, firstname, lastname);
+                    Customer c = new Customer(id, firstname, lastname, birthdate, phone);
                     results.add(c);
                 }
             }

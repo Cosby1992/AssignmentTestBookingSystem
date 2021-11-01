@@ -37,7 +37,7 @@ public class CreateCustomerTest {
         // Act
         var firstName = "a";
         var lastName = "b";
-        var birthdate = new Date(123456789l);
+        var birthdate = new Date(123456789L);
 
         customerService.createCustomer(firstName, lastName, birthdate);
 
@@ -50,4 +50,5 @@ public class CreateCustomerTest {
                         argThat(x -> x.firstname.equals(firstName) &&
                                 x.lastname.equals(lastName)));
     }
+
 }
