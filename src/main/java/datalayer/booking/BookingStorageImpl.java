@@ -26,6 +26,8 @@ public class BookingStorageImpl implements BookingStorage {
         return DriverManager.getConnection(connectionString, username, password);
     }
 
+    //TODO: Create method that can check weather the booking is valid (work-time for employee, not a sunday, not overlapping with other booking)
+
     @Override
     public int createBooking(BookingCreation booking) throws SQLException {
 

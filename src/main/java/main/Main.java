@@ -6,18 +6,16 @@ import datalayer.employee.EmployeeStorageImpl;
 import dto.*;
 import datalayer.customer.CustomerStorageImpl;
 
-import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Time;
 
 public class Main {
 
-    private static final String conStr = "jdbc:mysql://localhost:3306/DemoApplication";
-    private static final String user = "root";
-    private static final String pass = "";
+    private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/DemoApplication";
+    private static final String DB_USER = "root";
+    private static final String DB_PASS = "";
 
     public static void main(String[] args) throws SQLException {
-        CustomerStorageImpl customerStorage = new CustomerStorageImpl(conStr, user, pass);
+        CustomerStorageImpl customerStorage = new CustomerStorageImpl(CONNECTION_STRING, DB_USER, DB_PASS);
 
         System.out.println("Got customers: ");
         for(Customer c : customerStorage.getCustomers()) {
@@ -25,7 +23,7 @@ public class Main {
         }
 
 
-        BookingStorageImpl bookingStorage = new BookingStorageImpl(conStr, user, pass);
+        BookingStorageImpl bookingStorage = new BookingStorageImpl(CONNECTION_STRING, DB_USER, DB_PASS);
 
         System.out.println("Got bookings for customer with id = 1: ");
         for (Booking booking : bookingStorage.getBookingsForCustomer(1)){
@@ -33,7 +31,7 @@ public class Main {
         }
 
 
-        EmployeeStorage employeeStorage = new EmployeeStorageImpl(conStr, user, pass);
+        EmployeeStorage employeeStorage = new EmployeeStorageImpl(CONNECTION_STRING, DB_USER, DB_PASS);
 
         System.out.println("Got employee with id = 1: ");
         for (Employee employee : employeeStorage.getEmployees()){

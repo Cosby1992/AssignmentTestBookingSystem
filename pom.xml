@@ -70,23 +70,6 @@
         </plugins>
     </build>
 
-<!--    <reporting>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.jacoco</groupId>-->
-<!--                <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--                <reportSets>-->
-<!--                    <reportSet>-->
-<!--                        <reports>-->
-<!--                            &lt;!&ndash; select non-aggregate reports &ndash;&gt;-->
-<!--                            <report>report</report>-->
-<!--                        </reports>-->
-<!--                    </reportSet>-->
-<!--                </reportSets>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </reporting>-->
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -152,7 +135,25 @@
             <version>3.5.13</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>

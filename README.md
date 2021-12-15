@@ -2,6 +2,19 @@
 ### Hand in by
 Anders Jacobsen, Dmitro Karaush
 
+## NEW IMPLEMENTATION (TEST ASSIGNMENT 5)
+As part of Test assignment 5 we have implemented some behavior tests using cucumber. 
+The cucumber framework was a bit of a pain to get to work in the project, so we have 
+only implemented on cucumber scenario for now. We are working on more. 
+
+The feature file can be found here: ````src/test/resources/worktimefeatures````
+The step definitions can be found in ````src/test/java/CreateBookingStepDefinitions.java````
+
+### To run the cucumber tests
+1. Navigate to the file RunCucumberTest.java located in ```src/test/java```
+2. Run the RunCucumberTest file
+
+
 ## 1 BOOKING SYSTEM
 You are going to work on a skeleton of a simple booking system. The idea is for
 customers to book appointments with an employee. The overview of the system is
